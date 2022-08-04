@@ -1,28 +1,29 @@
-﻿string[] words = {"Orange", "Apple", "Kiwi", "Banana", "Pineapple" };
+﻿int[] number = { 65, 34, 29, 75, 11, 86 };
 Console.WriteLine("Before Sorting:");
-foreach (string word in words)
-{
-    Console.WriteLine(word);
-}
-InsertSort(words);
+display(number);
+BubbleSort(number);
 Console.WriteLine("\nAfter Sorting:");
-foreach (string word in words)
-{
-    Console.WriteLine(word);
-}
+display(number);
 
-void InsertSort(string[] array)//this method is used to store the values after sorting in array 
+void BubbleSort(int[] array)
 {
-    int i, j;
-    for(i = 1; i < array.Length; i++)
+    for(int i = 0; i < array.Length-1; i++)
     {
-        string word = array[i];
-        j = i - 1;
-        while((j >= 0) && (array[j].CompareTo(word)>0))
+        for(int j = 0; j < array.Length-i-1; j++)
         {
-            array[j + 1] = array[j];
-            j--;
+            if(array[j] > array[j + 1])
+            {
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
         }
-        array[j+1] = word;
+    }
+}
+void display(int[] array)
+{
+    foreach (int item in array)
+    {
+        Console.WriteLine(item);
     }
 }
