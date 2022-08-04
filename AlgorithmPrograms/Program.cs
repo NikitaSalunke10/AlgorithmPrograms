@@ -11,7 +11,7 @@ foreach (string word in words)
     Console.WriteLine(word);
 }
 
-void InsertSort(string[] array)
+void InsertSort(string[] array)//this method is used to store the values after sorting in array 
 {
     int i, j;
     for(i = 1; i < array.Length; i++)
