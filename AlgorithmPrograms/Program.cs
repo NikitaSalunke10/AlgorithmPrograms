@@ -1,29 +1,18 @@
-﻿int[] number = { 65, 34, 29, 75, 11, 86 };
-Console.WriteLine("Before Sorting:");
-display(number);
-BubbleSort(number);
-Console.WriteLine("\nAfter Sorting:");
-display(number);
-
-void BubbleSort(int[] array)
+﻿Console.Write("Enter first string: ");
+string str1 = Console.ReadLine();
+Console.Write("Enter second string: ");
+string str2 = Console.ReadLine();
+char[] ch1 = str1.ToLower().ToCharArray(); // converting the string in lower case and into array
+char[] ch2 = str2.ToLower().ToCharArray(); 
+Array.Sort(ch1); //sort method is used to arrange alphabets in ascending order
+Array.Sort(ch2);
+str1 = new string(ch1); //the char array is store in the string
+str2 = new string(ch2);
+if(str1.Equals(str2)) //if condititon is true it means both strings are equal and below message is printed
 {
-    for(int i = 0; i < array.Length-1; i++)
-    {
-        for(int j = 0; j < array.Length-i-1; j++)
-        {
-            if(array[j] > array[j + 1])
-            {
-                int temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
-        }
-    }
+    Console.WriteLine("Both strings are Anagram");
 }
-void display(int[] array)
+else
 {
-    foreach (int item in array)
-    {
-        Console.WriteLine(item);
-    }
+    Console.WriteLine("Both strings are not Anagram");
 }
