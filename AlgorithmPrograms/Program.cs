@@ -1,18 +1,21 @@
-﻿Console.Write("Enter first string: ");
-string str1 = Console.ReadLine();
-Console.Write("Enter second string: ");
-string str2 = Console.ReadLine();
-char[] ch1 = str1.ToLower().ToCharArray(); // converting the string in lower case and into array
-char[] ch2 = str2.ToLower().ToCharArray(); 
-Array.Sort(ch1); //sort method is used to arrange alphabets in ascending order
-Array.Sort(ch2);
-str1 = new string(ch1); //the char array is store in the string
-str2 = new string(ch2);
-if(str1.Equals(str2)) //if condititon is true it means both strings are equal and below message is printed
+﻿float ans;
+Console.WriteLine("Prime numbers are: ");
+for(int num = 0; num <= 1000; num++)// this for loop is to find primt number from 0-1000
 {
-    Console.WriteLine("Both strings are Anagram");
-}
-else
-{
-    Console.WriteLine("Both strings are not Anagram");
+    int flag = 0;
+    if (num == 0 || num == 1) //this if is used to skip 0 and 1 
+        continue;
+    for (int i = 2; i <= num/2; i++) 
+    {
+        ans = num % i;// remainder is calculated 
+        if (ans == 0)// check whether remainder is 0 or not if yes then value of count is set to 1 and come out of this for loop
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 0) // if count value remains 0 then the number is a prime number
+    {
+        Console.WriteLine(num);
+    }    
 }
