@@ -1,4 +1,8 @@
-﻿float ans;
+﻿using AlgorithmPrograms;
+
+float ans;
+int[] arr = new int[168];
+int j=0;
 Console.WriteLine("Prime numbers are: ");
 for(int num = 0; num <= 1000; num++)// this for loop is to find primt number from 0-1000
 {
@@ -16,6 +20,13 @@ for(int num = 0; num <= 1000; num++)// this for loop is to find primt number fro
     }
     if(flag == 0) // if count value remains 0 then the number is a prime number
     {
-        Console.WriteLine(num);
+        //Console.WriteLine(num);
+        arr[j] = num;
+        j++;
     }    
+}
+for (int i = 0; i < arr.Length; i++)
+{
+    FindAnagramPalindrome.findPalindrome(arr[i]);
+    //FindAnagramPalindrome.findAnagram(arr, arr[i]);
 }
